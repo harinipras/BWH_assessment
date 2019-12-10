@@ -1,0 +1,23 @@
+LINUX
+1. ls -alt : Lists all files in the directory including all . files in the long format sorted by time with the newest modified file first.
+
+2. ls -R Run*.txt
+
+3. cat exampleFile1.txt >> exampleFile2.txt
+
+4. sort exampleFile1 | tee exampleFile2.txt
+
+5. ls "regex_pattern"
+   grep -Rw "text" .
+
+
+
+SQL
+
+SELECT UserId, AVG(Total) AS AvgOrderTotal FROM Invoices HAVING COUNT(OrderID) >= 1
+
+Here:
+OrderID appears to be unique values and count() does not make sense
+
+ANSWER:
+SELECT UserID, Count(*), AVG(Total) AS AvgOrderTotal FROM Invoices GROUP BY UserId HAVING OrderID >= 1
